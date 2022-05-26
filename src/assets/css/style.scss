@@ -1,0 +1,105 @@
+/* import the necessary Bootstrap files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&display=swap');
+@import "_variables";
+// bootstrap
+@import "~bootstrap/scss/bootstrap";
+@import '~bootstrap-vue/src/index.scss';
+
+:root {
+    --gray: #E3E5E8;
+    --grey-light: #{$grey-light};
+    --border-radius: 14px;
+}
+
+body {
+    background-color: #ededed;
+}
+.form-control {
+    font-size: 13px;
+    padding: 10px;
+    height: auto;
+}
+
+.white_box {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0px 0px 6px rgb(0 0 0 / 10%);
+    margin-bottom: 20px;
+}
+
+.fs-sm {
+    font-size: 0.9rem;
+}
+// text
+.fw-500 {
+    font-weight: 500 !important;
+}
+.fw-600 {
+    font-weight: 600 !important;
+}
+.fw-700 {
+    font-weight: 700 !important;
+}
+
+.fw-semibold {
+    font-weight: 600 !important;
+}
+
+.c-pointer {
+    cursor: pointer;
+}
+
+.no-border{
+    border: none;
+    box-shadow: none;
+    &:focus{
+        box-shadow: none;
+    }
+}
+
+label {
+    font-weight: 600;
+    border-bottom: 0.7rem;
+}
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: #fff;
+    opacity: 1;
+}
+
+.form-control,.custom-select {
+    border-radius: 14px !important;
+    height: auto;
+    padding: 0.7rem;
+    &:focus{
+        box-shadow: none;
+    }
+}
+
+.dropdown {
+    &:hover {
+        background-color: var(--gray);
+        border-radius: 16px;
+    }
+
+    .dropdown-menu {
+        border: none;
+        box-shadow: 1px 3px 5px 2px #d3cece;
+        border-radius: 1.25rem;
+        padding: 0;
+        overflow: hidden;
+        .dropdown-item {
+            padding: 0.7rem;
+        }
+    }
+}
+
+.action-btn {
+    border-radius: 14px;
+    min-width: 152px;
+    padding: 0.6rem 0rem;
+    &.btn-default {
+        border: 1px solid var(--gray);
+        background-color: white;
+    }
+}
