@@ -1,11 +1,11 @@
-# Aspire UI
+# Popup UI
 
 ## Project setup
 
 ### Clone and install depencencies
 ```
-git clone https://github.com/vkbishu/sensehawk.git
-cd sensehawk
+git clone https://github.com/vkbishu/popup.git
+cd popup
 npm install
 ```
 
