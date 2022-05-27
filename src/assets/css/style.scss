@@ -20,11 +20,15 @@ body {
     height: auto;
 }
 
-.white_box {
-    background: #fff;
+.white_box , .grey_box {
+    background: #F9F9F9;
     border-radius: 14px;
     box-shadow: 0px 0px 6px rgb(0 0 0 / 10%);
     margin-bottom: 20px;
+}
+
+.white_box {
+    background: #fff;
 }
 
 .fs-sm {
