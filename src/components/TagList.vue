@@ -28,10 +28,6 @@ export default {
     methods: {
         deleteTag(index){
             this.$store.commit('tags/removeTag', index);
-        },
-        getRandomColorClass(){
-            let colors = ['color1', 'color2', 'color3', 'color4'];
-            return colors[Math.floor(Math.random()*colors.length)];
         }
     }
 }
