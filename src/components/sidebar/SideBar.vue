@@ -1,11 +1,11 @@
 <template>
-    <div class="sidebar white_box d-flex flex-column h-100 br-1">
-        <div class="sidebar__header p-3 border-bottom">
+    <div class="sidebar">
+        <div class="sidebar__header">
             <div class="d-flex align-items-center justify-content-between">
                 <div class="sidebar__title">
                     <slot name="title"></slot>
                 </div>
-                <div class="sidebar__action ml-auto">
+                <div class="sidebar__action">
                     <slot name="action"></slot>
                 </div>
             </div>
@@ -27,15 +27,32 @@ export default {
 
 <style lang="scss" scoped>
 .sidebar {
+    border-radius: 14px;
+    box-shadow: 0px 0px 6px rgb(0 0 0 / 10%);
+    margin-bottom: 20px;
+    background: #fff;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+
+    &__header {
+        padding: 1rem !important;
+        border-bottom: 1px solid #dee2e6 !important;
+    }
+
    &__title {
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 19px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
    }
 
    &__content{
        flex-grow: 1;
        overflow: auto;
+   }
+
+   &__action{
+      margin-left: auto !important;
    }
 
    &__footer {

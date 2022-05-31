@@ -6,24 +6,24 @@
             Action</div> 
          </template>
          <div class="p-3">
-            <div class="mb-3 actions">
-                <div class="actions__title mb-2">Assigned actions</div>
-                <div class="actions__text">The selected actions will run in the background when the user journey gets to this element</div>
-                <div class="actions__list">
-                    <div class="actions__item d-flex align-items-center justify-content-between" :class="{'actions__item--inactive': !item.isActive}" v-for="item in selectedActions" :key="item.key" @click="setAction(item)">
+            <div class="action">
+                <p class="action__title">Assigned actions</p>
+                <p class="action__text">The selected actions will run in the background when the user journey gets to this element</p>
+                <ul class="action__list">
+                    <li class="action__item" :class="{'action__item--inactive': !item.isActive}" v-for="item in selectedActions" :key="item.key" @click="setAction(item)">
                         <div>
                             <b-icon :icon="item.icon" class="mr-3" font-scale="1.5"></b-icon>
                             <span>{{item.title}}</span>
                         </div>
-                       <span class="actions__text--inactive" v-if="!item.isActive">Inactive</span>
-                    </div>
-                    <div class="actions__item actions__item--btn d-flex align-items-center justify-content-between" @click="$emit('updateSideBar', 'AddActionSideBar')">
+                       <span class="action__text--inactive" v-if="!item.isActive">Inactive</span>
+                    </li>
+                    <li class="action__item action__item--btn" @click="$emit('updateSideBar', 'AddActionSideBar')">
                         <div class="action--add--text">Add actions</div>
                         <div class="action--add--icon">
                             <b-icon icon="plus" font-scale="2"></b-icon>
                         </div>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
          </div>
     </side-bar>
@@ -59,11 +59,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.actions {
+.action {
     &__title {
         font-weight: bold;
         color: #475461;
         font-size: 1rem;
+        margin-bottom: 0.5rem !important;
     }
 
     &__text {
@@ -75,7 +76,9 @@ export default {
         padding: 22px;
         border-bottom: 1px solid #ebedee;
         cursor: pointer;
-
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         &:hover {
             background-color: #F2F2F3;
         }
@@ -88,6 +91,10 @@ export default {
         &--inactive {
             color: var(--gray);
             cursor: auto;
+        }
+
+        &:last-child {
+            border-bottom: none;
         }
     }
 
@@ -107,15 +114,12 @@ export default {
         }
     }
 
-    &__item:last-child {
-        border-bottom: none;
-    }
-
     &__list {
-        margin-top: 1rem;
         border: 1px solid #E3E6E8;
         border-radius: 15px;
         overflow: hidden;
+        list-style: none;
+        padding: 0;
     }
 
     
